@@ -17,5 +17,5 @@ We think this is because the less number of game playd, the less average earing 
 
 ```bash
 script/bootstrap # only for macOS users
-make
+make             # res.png will be created
 ```
