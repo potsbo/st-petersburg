@@ -8,3 +8,7 @@ res.csv: main
 
 main: main.cpp
 	$(CXX) -o main main.cpp
+
+.PHONY: show
+show: res.png
+	open res.png
