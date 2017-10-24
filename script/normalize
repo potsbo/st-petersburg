@@ -5,8 +5,7 @@ while read line; do
     echo ${line}
   fi
 
-  x=`echo ${line} | cut -d ',' -f 1`
-  y=`echo ${line} | cut -d ',' -f 2`
+  y=`echo ${line} | cut -d ',' -f 2 | cut -d '.' -f 1`
 
   if [ $y -le 100 ]; then
     echo ${line}
