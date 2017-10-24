@@ -2,13 +2,13 @@
 #include <math.h>
 using namespace std;
 
-int rand_max_bit = log2(RAND_MAX);
+const int rand_max_bit = log2(RAND_MAX);
 
 int trial(int base) {
 	int bits = rand();
 	for(int i = 0; i < rand_max_bit; i++)
 		if(bits & (1 << i))
-			return pow(2, i + base);
+			return 1 << (i + base);
 	return trial(base + rand_max_bit);
 }
 
