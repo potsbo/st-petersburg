@@ -15,7 +15,7 @@ int trial(int base) {
 void run(double n) {
 	long long max = pow(2, n);
 
-	long long sum = 0;
+	unsigned long long sum = 0;
 	for(int i = 0; i < max; i++)
 		sum += trial(0);
 	
