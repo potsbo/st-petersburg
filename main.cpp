@@ -12,8 +12,8 @@ int trial(int base) {
 	return trial(base + rand_max_bit);
 }
 
-double run(double n) {
-	unsigned long long max = pow(2, n);
+double run(double power) {
+	unsigned long long max = pow(2, power);
 
 	unsigned long long sum = 0;
 	for(int i = 0; i < max; i++)
