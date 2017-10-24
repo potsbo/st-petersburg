@@ -7,7 +7,7 @@ res.csv: res.raw.csv
 	./script/normalize < res.raw.csv > res.csv
 
 res.raw.csv: main
-	time ./main > res.csv
+	time ./main > res.raw.csv
 
 main: main.cpp
 	$(CXX) -o main main.cpp
