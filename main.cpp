@@ -29,8 +29,8 @@ int main(void) {
 	const double step = 0.1;
 	const int max_count = max_bit / step;
 
-	for(int n = 0; n < max_count; n++){
-		run(n * step);
+	for(int i = 0; i < max_count; i++){
+		run(i * step);
 	}
 	return 0;
 }
