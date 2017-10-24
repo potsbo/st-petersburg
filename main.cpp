@@ -25,7 +25,7 @@ int main(void) {
 	srand((unsigned) time(NULL));
 
 	int max = 30;
-	double step = 0.5;
+	double step = 0.1;
 
 	for(int n = 0; n < max / step; n++){
 		run(n * step);
