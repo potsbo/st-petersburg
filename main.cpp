@@ -12,14 +12,14 @@ int trial(int base) {
 	return trial(base + rand_max_bit);
 }
 
-void run(double n) {
+double run(double n) {
 	unsigned long long max = pow(2, n);
 
 	unsigned long long sum = 0;
 	for(int i = 0; i < max; i++)
 		sum += trial(0);
 	
-	cout << n << "," << sum / (double) max << endl;
+	return sum / (double) max;
 }
 
 int main(void) {
@@ -30,7 +30,7 @@ int main(void) {
 	const int max_count = max_bit / step;
 
 	for(int i = 0; i < max_count; i++){
-		run(i * step);
+		cout << i * step << "," << run(i * step) << endl;
 	}
 	return 0;
 }
