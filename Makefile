@@ -5,7 +5,7 @@ all: res.png
 res.png: res.csv graph.plot
 	gnuplot < graph.plot
 
-res.csv: res.raw.csv
+res.csv: res.raw.csv ./script/normalize
 	./script/normalize < $< > $@
 
 res.raw.csv: main
