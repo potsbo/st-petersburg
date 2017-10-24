@@ -1,0 +1,14 @@
+#!/bin/bash
+
+while read line; do
+  if echo ${line} | grep "^#"; then
+    echo ${line}
+  fi
+
+  x=`echo ${line} | cut -d ',' -f 1`
+  y=`echo ${line} | cut -d ',' -f 2`
+
+  if [ $y -le 100 ]; then
+    echo ${line}
+  fi
+done
