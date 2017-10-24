@@ -25,10 +25,11 @@ void run(double n) {
 int main(void) {
 	srand((unsigned) time(NULL));
 
-	int max = 30;
-	double step = 0.1;
+	const int max_bit = 30;
+	const double step = 0.1;
+	const int max_count = max_bit / step;
 
-	for(int n = 0; n < max / step; n++){
+	for(int n = 0; n < max_count; n++){
 		run(n * step);
 	}
 	return 0;
