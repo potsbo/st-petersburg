@@ -3,7 +3,10 @@ CXX := g++
 res.png: res.csv graph.plot
 	gnuplot < graph.plot
 
-res.csv: main
+res.csv: res.raw.csv
+	./script/normalize < res.raw.csv > res.csv
+
+res.raw.csv: main
 	time ./main > res.csv
 
 main: main.cpp
