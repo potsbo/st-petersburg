@@ -1,5 +1,8 @@
 #!/bin/bash
 
+MAX=100
+ignored=0
+
 while read line; do
   if echo ${line} | grep "^#"; then
     echo ${line}
@@ -7,7 +10,14 @@ while read line; do
 
   y=`echo ${line} | cut -d ',' -f 2 | cut -d '.' -f 1`
 
-  if [ $y -le 100 ]; then
+
+  if [ $y -le $MAX ]; then
     echo ${line}
+  else
+    ignored=$((++ignored))
   fi
 done
+
+if [ $ignored -gt 0 ]; then
+  >&2 echo "$ignored line(s) ignored for exceeding $MAX"
+fi
