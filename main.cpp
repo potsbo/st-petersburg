@@ -5,7 +5,7 @@ using namespace std;
 int trial(void) {
 	for(int i = 0;; i++)
 		if (rand()%2)
-			return pow(2, i-1);
+			return pow(2, i);
 }
 
 void run(double n) {
