@@ -2,10 +2,13 @@
 #include <math.h>
 using namespace std;
 
-int trial(void) {
-	for(int i = 0;; i++)
-		if (rand()%2)
-			return pow(2, i);
+
+int trial(int base) {
+	int bits = rand();
+	for(int i = 0; i < 15; i++)
+		if(bits & (1 << i))
+			return pow(2, i + base);
+	return trial(base + 15);
 }
 
 void run(double n) {
@@ -13,7 +16,7 @@ void run(double n) {
 
 	long long sum = 0;
 	for(int i = 0; i < max; i++)
-		sum += trial();
+		sum += trial(0);
 	
 	cout << n << "," << sum / (double) max << endl;
 }
