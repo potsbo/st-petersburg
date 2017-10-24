@@ -21,7 +21,7 @@ void run(double n) {
 int main(void) {
 	srand((unsigned) time(NULL));
 
-	int max = 30;
+	int max = 60;
 	double step = 0.5;
 
 	for(int n = 0; n < max / step; n++){
