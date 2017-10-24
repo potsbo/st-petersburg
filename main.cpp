@@ -15,7 +15,7 @@ void run(double n) {
 	for(int i = 0; i < max; i++)
 		sum += trial();
 	
-	cout << "\"" << sum / (double) max << "\",\"" << n << "\"" << endl;
+	cout << sum / (double) max  << "," << n << endl;
 }
 
 int main(void) {
