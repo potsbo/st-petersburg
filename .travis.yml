@@ -1,5 +1,8 @@
 language: c
 compiler: clang
 
+install:
+  - apt-get install gnuplot
+
 script:
   - make store
