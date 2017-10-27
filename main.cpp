@@ -30,7 +30,8 @@ int main(void) {
 	const int max_count = max_bit / step;
 
 	for(int i = 0; i < max_count; i++){
-		cout << i * step << "," << run(i * step) << endl;
+		double power = i * step;
+		cout << power << "," << run(power) << endl;
 	}
 	return 0;
 }
