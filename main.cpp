@@ -25,7 +25,7 @@ double run(double power) {
 int main(void) {
 	srand((unsigned) time(NULL));
 
-	const int max_bit = 10;
+	const int max_bit = 30;
 	const double step = 0.1;
 	const int size = max_bit / step;
 
