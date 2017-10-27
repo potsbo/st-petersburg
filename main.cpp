@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include <stdlib.h>
 using namespace std;
 
 const int rand_max_bit = log2(RAND_MAX);
