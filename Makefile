@@ -1,4 +1,5 @@
-CXX := g++
+CXX      := g++
+REVISION := $(shell git rev-parse --short HEAD)
 
 all: res.png
 
@@ -21,3 +22,13 @@ show: res.png
 .PHONY: clean
 clean:
 	rm res.png res.csv main
+
+.PHONY: store
+store: res.$(REVISION).png
+
+res.$(REVISION).png: res.png
+	if [ -z "$(git status --porcelain)" ]; then
+		exit 1
+	else
+		cp res.png $@
+	fi
