@@ -4,7 +4,7 @@ using namespace std;
 
 const int rand_max_bit = log2(RAND_MAX);
 
-int trial(int base) {
+int trial(int base = 0) {
 	int bits = rand();
 	for(int i = 0; i < rand_max_bit; i++)
 		if(bits & (1 << i))
@@ -17,7 +17,7 @@ double run(double power) {
 
 	unsigned long long sum = 0;
 	for(int i = 0; i < max; i++)
-		sum += trial(0);
+		sum += trial();
 	
 	return sum / (double) max;
 }
