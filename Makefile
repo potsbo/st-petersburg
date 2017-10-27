@@ -1,7 +1,7 @@
 CXX      := g++
 REVISION := $(shell git rev-parse --short HEAD)
 
-all: res.png
+all: dist/res.$(REVISION).png
 
 res.png: res.csv graph.plot
 	gnuplot < graph.plot
