@@ -27,8 +27,4 @@ clean:
 store: res.$(REVISION).png
 
 res.$(REVISION).png: res.png
-	if [ -z "$(git status --porcelain)" ]; then
-		exit 1
-	else
-		cp res.png $@
-	fi
+	script/store $@
