@@ -26,5 +26,8 @@ clean:
 .PHONY: store
 store: dist/res.$(REVISION).png
 
-dist/res.$(REVISION).png: res.png
+dist/res.$(REVISION).png: res.png dist
 	script/store $@
+
+dist:
+	mkdir -p dist
