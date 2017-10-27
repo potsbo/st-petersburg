@@ -24,7 +24,7 @@ clean:
 	rm res.png res.csv main
 
 .PHONY: store
-store: res.$(REVISION).png
+store: dist/res.$(REVISION).png
 
-res.$(REVISION).png: res.png
+dist/res.$(REVISION).png: res.png
 	script/store $@
