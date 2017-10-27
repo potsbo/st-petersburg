@@ -27,9 +27,9 @@ int main(void) {
 
 	const int max_bit = 30;
 	const double step = 0.1;
-	const int max_count = max_bit / step;
+	const int size = max_bit / step;
 
-	for(int i = 0; i < max_count; i++){
+	for(int i = 0; i < size; i++){
 		double power = i * step;
 		cout << power << "," << run(power) << endl;
 	}
