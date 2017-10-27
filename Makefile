@@ -1,7 +1,12 @@
-CXX      := g++
-REVISION := $(shell git rev-parse --short HEAD)
+CXX       := g++
+REVISION  := $(shell git rev-parse --short HEAD)
+IMAGE_DIR := dist
+TARGET    := $(IMAGE_DIR)/res.$(REVISION).png
 
-all: dist/res.$(REVISION).png
+all: $(TARGET)
+
+$(TARGET): res.png $(IMAGE_DIR)
+	script/store $@
 
 res.png: res.csv graph.plot
 	gnuplot < graph.plot
@@ -21,13 +26,10 @@ show: res.png
 
 .PHONY: clean
 clean:
-	rm res.png res.csv main
+	rm *.png *.csv main
 
 .PHONY: store
 store: dist/res.$(REVISION).png
 
-dist/res.$(REVISION).png: res.png dist
-	script/store $@
-
-dist:
-	mkdir -p dist
+$(IMAGE_DIR):
+	mkdir -p $@
