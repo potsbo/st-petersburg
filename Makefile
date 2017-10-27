@@ -9,7 +9,7 @@ res.csv: res.raw.csv ./script/normalize
 	./script/normalize < $< > $@
 
 res.raw.csv: main
-	time ./$< > $@
+	time ./$< | tee $@
 
 main: main.cpp
 	$(CXX) -o $@ $<
